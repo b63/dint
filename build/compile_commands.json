@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/bk/opt/ldata/edu/cs330/dint/build/src",
+  "command": "g++   -I/home/bk/opt/ldata/edu/cs330/dint/lib -I/home/bk/opt/ldata/edu/cs330/dint/include    -std=gnu++17 -o CMakeFiles/test_dint.dir/test_dint.cpp.o -c /home/bk/opt/ldata/edu/cs330/dint/src/test_dint.cpp",
+  "file": "/home/bk/opt/ldata/edu/cs330/dint/src/test_dint.cpp"
+},
+{
+  "directory": "/home/bk/opt/ldata/edu/cs330/dint/build/src",
+  "command": "g++   -I/home/bk/opt/ldata/edu/cs330/dint/lib -I/home/bk/opt/ldata/edu/cs330/dint/include    -std=gnu++17 -o CMakeFiles/libdint.dir/dint.cpp.o -c /home/bk/opt/ldata/edu/cs330/dint/src/dint.cpp",
+  "file": "/home/bk/opt/ldata/edu/cs330/dint/src/dint.cpp"
+},
+{
+  "directory": "/home/bk/opt/ldata/edu/cs330/dint/build/src",
+  "command": "g++   -I/home/bk/opt/ldata/edu/cs330/dint/lib -I/home/bk/opt/ldata/edu/cs330/dint/include    -std=gnu++17 -o CMakeFiles/libdint.dir/clientsm.cpp.o -c /home/bk/opt/ldata/edu/cs330/dint/src/clientsm.cpp",
+  "file": "/home/bk/opt/ldata/edu/cs330/dint/src/clientsm.cpp"
+}
+]
