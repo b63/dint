@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <vector>
 #include <string>
+#include <cstdlib>
 
 #include "dint.h"
 
@@ -24,11 +25,11 @@ namespace dint {
     class VersionMismatch : public std::exception
     {
     private:
-        uint16_t server_v;
-        uint16_t client_v;
+        uint8_t server_v;
+        uint8_t client_v;
 
     public: 
-        VersionMismatch(uint16_t server, uint16_t client)
+        VersionMismatch(uint8_t server, uint8_t client)
             : server_v (server), client_v (client)
         {}
 
@@ -39,60 +40,52 @@ namespace dint {
 
     };
 
-    class IncompleteRecord : public std::exception
+
+    class Exception : public std::exception
     {
-    private:
-        std::string m_msg;
+        public:
+        Exception(const char *msg)
+            : m_msg(msg)
+        {}
+
+        const char * what() const throw() {
+            return m_msg.c_str();
+        }
+
+        private:
+            std::string m_msg;
+    };
+
+    class IncompleteRecord : public Exception
+    {
     public:
         IncompleteRecord(const char *msg)
-            : m_msg (msg)
+            : Exception(msg)
         { }
-
-        const char * what() const throw () {
-            return m_msg.c_str();
-        }
     };
 
-    class InvalidRecord : public std::exception
+    class InvalidRecord : public Exception
     {
-    private:
-        std::string m_msg;
     public:
         InvalidRecord(const char *msg)
-            : m_msg (msg)
+            : Exception (msg)
         { }
-
-        const char * what() const throw () {
-            return m_msg.c_str();
-        }
     };
 
-    class InvalidState : public std::exception
+    class InvalidState : public Exception
     {
-    private:
-        std::string m_msg;
     public:
         InvalidState(const char *msg)
-            : m_msg (msg)
+            : Exception (msg)
         { }
-
-        const char * what() const throw () {
-            return m_msg.c_str();
-        }
     };
 
-    class VerificationFailed : public std::exception
+    class VerificationFailed : public Exception
     {
-    private:
-        std::string m_msg;
     public:
         VerificationFailed(const char *msg)
-            : m_msg (msg)
+            : Exception (msg)
         { }
-
-        const char * what() const throw () {
-            return m_msg.c_str();
-        }
     };
 }
 #endif
