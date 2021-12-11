@@ -19,7 +19,7 @@ by running `make`.
 
 The default cmake script looks for Crypto++ under `lib/cryptopp`,
 so if Crypto++ is already installed as a system library then
-then `CMakeLists.txt` may need to be modified.
+`CMakeLists.txt` may need to be modified.
 
 
 After Crypto++ is built, DinT can be built under `build/` by running
