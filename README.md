@@ -1,3 +1,24 @@
+DinT
+-----
+A protocol on top of TCP that provides
+a secure encrypted channel through which two parties can communicate. Here a ‘secure channel’ means that
+an unauthorized third party listening in on the information being exchanged would not be able to easily
+decipher it.
+Implementation details:
+- Employs a TLS-like handshake that uses Diffie-Hellman to establish a master key, and using that
+master key to encrypt all subsequent traffic.
+- Cryptographic algorithms used: AES-128, SHA256, RSA, HMAC.
+
+
+Below are the state diagrams showing the series of messages that would be exchanged between client/server over TCP
+to establish a shared secret over an open channel.
+
+State diagram of the client:
+![client state machine](https://github.com/b63/dint/blob/master/resources/clientsm.png?raw=true)
+
+State diamgram of the server:
+![client state machine](https://github.com/b63/dint/blob/master/resources/serversm.png?raw=true)
+
 Building
 -----
 
